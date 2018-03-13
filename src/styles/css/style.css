@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed');
+body {
+    background-image: url(../images/yummy.jpg);
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
+
+div {
+    color: aliceblue;
+    text-align: left;
+    margin:40px;
+
+}
+
+.heading {
+    float: left;
+}
+h5 {
+    color: brown;
+}
+
+.link {
+    color:black;
+}
+
+.navbar {
+    margin-top: -2.5em;
+    height: 3em;
+}
+
+.addbutton {
+    float: right;
+}
+
+hr {
+    background-color: white;
+}
+
+.search {
+   margin-left: 4em;
+}
+
+p {
+    color: black;
+}
+
+.modal-content {
+    background-color: #f8f9fa54;
+}
