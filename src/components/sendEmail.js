@@ -1,4 +1,4 @@
-import React , { Component}from 'react';
+import React from 'react';
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
 
@@ -60,9 +60,6 @@ export class SendEmail extends React.Component{
                         </div>
                     </div>
                     </div>
-                <footer>
-                    <p class="copyright text-muted small">Copyright © Gela 2018.</p>
-                </footer>
             </div>
         );
     }

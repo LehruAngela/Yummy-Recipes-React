@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
 
@@ -17,8 +17,10 @@ export class CreateCategory extends React.Component {
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
     event.preventDefault();
     axios.post('http://127.0.0.1:5000/api-v1/categories/',this.state, {headers})
-            .then(response => {notify.show('Category created successfully', 'success', 4000);
-            this.props.history.push('/categories');
+            .then(response => {
+                document.getElementById('closeCategoryModal').click();
+                notify.show('Category created successfully', 'success', 4000);
+                this.props.handleViewCategory();
             })
     .catch(error => {
     if (error.response){
@@ -33,16 +35,37 @@ export class CreateCategory extends React.Component {
         const {category_name} = this.state
         return (
             <div>
-                <form onSubmit={this.handleCreateCategory}>
-                <div>
-                    <label>Category Name</label><br/>
-                    <input name="category_name" type="text" value={category_name} onChange={this.handleInputChange}/>
+            <button type="button" className="btn my-2 my-sm-0 addbutton link" data-toggle="modal" data-target="#createCategory">
+             <i class="fas fa-plus-circle"></i> Add Category
+            </button>   
+   
+            <div class="modal fade" id="createCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">Add Category</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeCategoryModal">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form onSubmit={this.handleCreateCategory}>
+                        <div className="form-group">
+                            <h6><label>Category Name</label><br/></h6>
+                            <input name="category_name" type="text" value={category_name} onChange={this.handleInputChange}/>
+                        </div>
+                        <div className="form-group">
+                            <button type="submit">Create</button>
+                        </div>
+                    </form>
+                    </div>      
+                    </div>
                 </div>
-                <div>
-                    <button type="submit">Create</button>
-                </div>
-            </form>
             </div>
+        </div>
+           
             );
         }
     }
+
+export default CreateCategory;

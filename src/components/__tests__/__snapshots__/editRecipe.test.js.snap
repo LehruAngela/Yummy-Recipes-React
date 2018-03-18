@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditRecipe renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  class="modal fade"
+  id="editRecipeundefined"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="modal-dialog modal-dialog-centered"
+    role="document"
+  >
+    <div
+      class="modal-content"
+    >
+      <div
+        class="modal-header"
+      >
+        <h4
+          class="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Edit Recipe
+        </h4>
+        <button
+          aria-label="Close"
+          class="close"
+          data-dismiss="modal"
+          id="closeRecipeModal"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <div
+        class="modal-body"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <div>
+            <label>
+              Recipe Name
+            </label>
+            <br />
+            <input
+              name="recipe_name"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              for="ingredients"
+            >
+              Ingredients
+            </label>
+            <br />
+            <textarea
+              cols="50"
+              name="ingredients"
+              onChange={[Function]}
+              rows="3"
+              type="text"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              for="directions"
+            >
+              Directions
+            </label>
+            <br />
+            <textarea
+              cols="50"
+              name="directions"
+              onChange={[Function]}
+              rows="3"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Edit Recipe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register renders properly 1`] = `
+<div
+  className="form-margin"
+>
+  <h1>
+    Yummy Recipes App
+  </h1>
+  <br />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          htmlFor="email"
+        >
+          Email:
+        </label>
+      </h4>
+      <input
+        name="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          htmlFor="text"
+        >
+          Username:
+        </label>
+        <br />
+      </h4>
+      <input
+        name="username"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          htmlFor="password"
+        >
+          Password:
+        </label>
+        <br />
+      </h4>
+      <input
+        name="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          htmlFor="confirmpassword"
+        >
+          Confirm Password:
+        </label>
+        <br />
+      </h4>
+      <input
+        name="confirm_password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <button
+        className="btn btn-outline-warning"
+        type="submit"
+      >
+        Register
+      </button>
+    </div>
+    <br />
+  </form>
+  <h4>
+    Already have an account?
+  </h4>
+  <div>
+    <Link
+      replace={false}
+      to="/login"
+    >
+      <button
+        className="btn btn-outline-warning"
+        type="submit"
+      >
+        Login
+      </button>
+    </Link>
+  </div>
+  <br />
+  <br />
+  <footer>
+    <p
+      className="copyright text-muted small footer"
+    >
+      Copyright © Gela 2018.
+    </p>
+  </footer>
+</div>
+`;

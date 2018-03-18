@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders properly 1`] = `
+<div
+  className="form-margin"
+>
+  <h1>
+    Login to your account
+  </h1>
+  <br />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          for="email"
+        >
+          Email:
+        </label>
+      </h4>
+      <input
+        name="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <br />
+    <div
+      className="form-group"
+    >
+      <h4>
+        <label
+          for="password"
+        >
+          Password:
+        </label>
+      </h4>
+      <input
+        name="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <button
+        className="btn btn-outline-warning"
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+    <div>
+      <a
+        data-target="#exampleModal"
+        data-toggle="modal"
+        href="#"
+      >
+        Forgotten Password?
+      </a>
+      <SendEmail />
+    </div>
+    <br />
+    <br />
+  </form>
+  <div>
+    <h4>
+      Don't have an account?
+    </h4>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button
+        className="btn btn-outline-warning"
+        type="submit"
+      >
+        Register
+      </button>
+    </Link>
+  </div>
+  <br />
+  <br />
+  <footer>
+    <p
+      class="copyright text-muted small footer"
+    >
+      Copyright © Gela 2018.
+    </p>
+  </footer>
+</div>
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewRecipes renders properly 1`] = `
+<div>
+  <div
+    className="header"
+  >
+    <Component />
+    <div>
+      <h2
+        className="heading"
+      >
+        's Recipes
+      </h2>
+      <CreateRecipe
+        handleViewRecipe={[Function]}
+        match={
+          Object {
+            "params": Object {
+              "match": Object {
+                "params": Object {
+                  "id": 1,
+                },
+              },
+            },
+          }
+        }
+      />
+    </div>
+    <form
+      class="form-inline my-2 my-lg-0"
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search"
+        class="form-control mr-sm-2 search"
+        name="q"
+        onChange={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn my-2 my-sm-0"
+        type="submit"
+      >
+        <i
+          class="fas fa-search"
+        />
+        Search
+      </button>
+    </form>
+    <hr />
+  </div>
+  <div
+    className=""
+  />
+  <Pagination
+    handlePageChange={[Function]}
+    per_page={6}
+    total=""
+  />
+</div>
+`;

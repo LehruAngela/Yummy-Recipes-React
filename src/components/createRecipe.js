@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { notify } from 'react-notify-toast';
 
@@ -48,7 +48,7 @@ export class CreateRecipe extends React.Component {
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h4 class="modal-title" id="exampleModalLongTitle">Add Recipe</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeRecipeModal">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -65,7 +65,7 @@ export class CreateRecipe extends React.Component {
                             </div>
                             <div>
                                 <label for="directions">Directions</label><br/>
-                                <textarea name="directions" type="text" value={directions} onChange={this.handleInputChange} />
+                                <textarea name="directions" type="text" value={directions} onChange={this.handleInputChange} rows="3" cols="50"/>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Create Recipe</button>
@@ -80,3 +80,4 @@ export class CreateRecipe extends React.Component {
         );
     }
 }
+export default CreateRecipe;

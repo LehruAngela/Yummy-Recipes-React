@@ -5,10 +5,7 @@ body {
 }
 
 div {
-    color: aliceblue;
-    text-align: left;
-    margin:40px;
-
+    color: #ddd5c5;
 }
 
 .heading {
@@ -17,22 +14,26 @@ div {
 h5 {
     color: brown;
 }
-
+h1 {
+    color:#ddd5c5;
+}
 .link {
     color:black;
 }
 
 .navbar {
-    margin-top: -2.5em;
     height: 3em;
-}
-
-.addbutton {
-    float: right;
+    margin-bottom: 2.5em;
 }
 
 hr {
+    margin-left: 5em;
+    margin-right: 5em;
     background-color: white;
+}
+.addbutton {
+    float: right;
+    margin-right: 11em;
 }
 
 .search {
@@ -40,9 +41,83 @@ hr {
 }
 
 p {
-    color: black;
+    color:black;
 }
 
 .modal-content {
-    background-color: #f8f9fa54;
+    background-color: #b46c3fc0;
+    text-align: center;
 }
+
+.modal-title {
+    text-align: center;
+}
+
+.form-margin{
+    float: left;
+    padding: 5em 0em 9em 9em;
+    text-align: center;
+
+}
+
+.footer {
+    color: #e699a1!important;
+
+}
+
+.category-card {
+    margin-left: 6em;
+    margin-right: 5em;
+    padding: 1em 3em 0em 3em;
+}
+
+.recipe-card {
+    margin-left: 8em;
+    margin-right: 8em;
+    background-color: rgba(255, 255, 255, 0.932) !important;
+}
+
+.single-card {
+    background-color: rgba(255, 255, 255, 0.932) !important;
+
+}
+.heading {
+    margin-left: 4em;
+    margin-right: 2em;
+}
+
+a {
+    color: #ddd5c5;
+}
+input {
+    width: 15em;
+    padding: 0.4em 1em;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+
+.purple {
+    color: purple;
+}
+
+.black {
+    color: black;
+}
+
+.pagination {
+    margin-left: 46%;
+    margin-top: 0.3em;
+}
+
+.pagination-title {
+    margin-top: 2.4em;
+    margin-left: 46.5%;
+    font-size: 120%;
+    font-weight: bold;
+    
+}
+/* top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px */

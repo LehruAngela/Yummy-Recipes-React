@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewCategories renders properly 1`] = `
+<div>
+  <Component />
+  <div>
+    <h2
+      className="heading"
+    >
+      Categories
+    </h2>
+    <CreateCategory
+      handleViewCategory={[Function]}
+    />
+  </div>
+  <div>
+    <form
+      class="form-inline my-2 my-lg-0"
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search"
+        class="form-control mr-sm-2 search"
+        name="q"
+        onChange={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn my-2 my-sm-0"
+        type="submit"
+      >
+        <i
+          class="fas fa-search"
+        />
+        Search
+      </button>
+    </form>
+    <hr />
+    <div
+      className="row category-card"
+    />
+    <Pagination
+      handlePageChange={[Function]}
+      per_page={6}
+      total=""
+    />
+  </div>
+</div>
+`;
