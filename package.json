@@ -8,6 +8,7 @@
     "babel-cli": "^6.26.0",
     "babel-install": "^2.1.0",
     "bootstrap4": "0.0.1-security",
+    "coveralls": "^3.0.0",
     "enzyme-to-json": "^3.3.1",
     "jest-localstorage-mock": "^2.2.0",
     "material-ui": "^0.20.0",
