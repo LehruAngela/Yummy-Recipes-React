@@ -3,5 +3,9 @@
 exports[`Profile renders properly 1`] = `
 <div
   className="purple"
-/>
+>
+  <i
+    class="fas fa-user-circle"
+  />
+</div>
 `;

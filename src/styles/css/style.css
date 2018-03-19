@@ -14,6 +14,10 @@ div {
 h5 {
     color: brown;
 }
+.brown {
+    color: brown;
+}
+
 h1 {
     color:#ddd5c5;
 }
@@ -66,20 +70,26 @@ p {
 }
 
 .category-card {
-    margin-left: 6em;
-    margin-right: 5em;
+    margin-left: 12em;
+    margin-right: 12em;
     padding: 1em 3em 0em 3em;
+    text-align:center;
 }
 
 .recipe-card {
     margin-left: 8em;
     margin-right: 8em;
     background-color: rgba(255, 255, 255, 0.932) !important;
+    border-radius: 10px!important;
 }
 
 .single-card {
-    background-color: rgba(255, 255, 255, 0.932) !important;
-
+    background-color: rgba(255, 255, 255, 0.918) !important;
+    padding: 1.5em 2em 1.5em 2em;
+    border-radius: 6px!important;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    width: 18rem;
 }
 .heading {
     margin-left: 4em;
@@ -106,16 +116,26 @@ input {
 }
 
 .pagination {
-    margin-left: 46%;
+    margin-left: 20%;
     margin-top: 0.3em;
 }
 
 .pagination-title {
-    margin-top: 2.4em;
-    margin-left: 46.5%;
+    margin-top: 1.5em;
+    margin-left: 20%;
     font-size: 120%;
     font-weight: bold;
     
+}
+.recipe-btn {
+    float:right;
+    margin-bottom: 1em; 
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }
 /* top padding is 25px
 right padding is 50px

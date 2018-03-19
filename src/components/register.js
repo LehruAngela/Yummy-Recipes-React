@@ -9,6 +9,7 @@ export class Register extends React.Component{
         username: '',
         password:'',
         confirm_password:'',
+        profile:''
     }
 
     handleInputChange =(event)=>{
@@ -24,6 +25,7 @@ export class Register extends React.Component{
             .then(response =>{notify.show(response.data.message, 'success', 4000);
             localStorage.setItem('accessToken', response.data.access_token);
             this.props.history.push('/categories');
+            this.setState({profile:response.data.username})
             })
 
     .catch(error => {
@@ -42,7 +44,6 @@ export class Register extends React.Component{
         return(
             <div className="form-margin">
                 <h1>Yummy Recipes App</h1><br/>
-                {/* <h1>Register</h1>< br/> */}
                 <form onSubmit={this.handleRegister}>
                     <div className="form-group">
                         <h4><label htmlFor="email">Email:</label></h4>

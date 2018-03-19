@@ -20,16 +20,17 @@ exports[`SendEmail renders properly 1`] = `
         <div
           class="modal-header"
         >
-          <h5
+          <h4
             class="modal-title"
             id="exampleModalLabel"
           >
             Reset Password
-          </h5>
+          </h4>
           <button
             aria-label="Close"
             class="close"
             data-dismiss="modal"
+            id="closeModal"
             type="button"
           >
             <span
@@ -45,13 +46,17 @@ exports[`SendEmail renders properly 1`] = `
           <form
             onSubmit={[Function]}
           >
-            <div>
-              <label
-                htmlFor="email"
-              >
-                Email
-              </label>
-              <br />
+            <div
+              className="form-group"
+            >
+              <h6>
+                <label
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <br />
+              </h6>
               <input
                 name="email"
                 onChange={[Function]}
@@ -60,10 +65,10 @@ exports[`SendEmail renders properly 1`] = `
               />
             </div>
             <div
-              class="modal-footer"
+              class="modal-footer form-group"
             >
               <button
-                class="btn btn-primary"
+                class="btn "
                 type="submit"
               >
                 Send Email

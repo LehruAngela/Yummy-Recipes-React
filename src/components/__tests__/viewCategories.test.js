@@ -21,10 +21,6 @@ describe('ViewCategories', () => {
     });
 
     it('handles ViewCategories', () => {
-        expect(wrapper.instance().handleEditCategory({ preventDefault }));
-    });
-
-    it('handles ViewCategories', () => {
         expect(wrapper.instance().handlePageChange({ preventDefault }));
     });
  

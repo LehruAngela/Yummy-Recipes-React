@@ -54,7 +54,6 @@ exports[`EditRecipe renders properly 1`] = `
               name="recipe_name"
               onChange={[Function]}
               type="text"
-              value=""
             />
           </div>
           <div>
@@ -70,7 +69,6 @@ exports[`EditRecipe renders properly 1`] = `
               onChange={[Function]}
               rows="3"
               type="text"
-              value=""
             />
           </div>
           <div>
@@ -86,7 +84,6 @@ exports[`EditRecipe renders properly 1`] = `
               onChange={[Function]}
               rows="3"
               type="text"
-              value=""
             />
           </div>
           <div

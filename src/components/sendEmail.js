@@ -18,7 +18,9 @@ export class SendEmail extends React.Component{
     let data = {email}
     event.preventDefault();
     axios.post('http://127.0.0.1:5000/api-v1/auth/send_email',data)
-            .then(response =>{notify.show(response.data.message, 'success', 4000);
+            .then(response =>{
+                document.getElementById('closeModal').click();
+                notify.show(response.data.message, 'success', 4000);
             })
 
     .catch(error => {
@@ -40,19 +42,19 @@ export class SendEmail extends React.Component{
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Reset Password</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <h4 class="modal-title" id="exampleModalLabel">Reset Password</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal" >
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                         <form onSubmit={this.handleSendEmail}>
-                            <div>
-                                <label htmlFor="email">Email</label><br/>
+                            <div className="form-group">
+                                <h6><label htmlFor="email">Email</label><br/></h6>
                                 <input name="email" type="email" value={email} onChange={this.handleInputChange}/>
                             </div>
-                            <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Send Email</button>
+                            <div class="modal-footer form-group">
+                            <button type="submit" class="btn ">Send Email</button>
                         </div>
                         </form>
                         </div>

@@ -39,27 +39,27 @@ export class ResetPassword extends React.Component{
     render() {
         const {email, new_password, confirm_new_password} = this.state
         return(
-            <div>
-                <h2>Register</h2>
+            <div className="form-margin">
+                <h2>Reset Password</h2><br/>
                 <form onSubmit={this.handleResetPassword}>
-                    <div>
-                        <label htmlFor="email">Email</label><br/>
+                    <div className="form-group">
+                        <h4><label htmlFor="email">Email:</label><br/></h4>
                         <input name="email" type="email" value={email} onChange={this.handleInputChange}/>
                     </div>
-                    <div>
-                        <label htmlFor="password">New Password</label><br/>
+                    <div className="form-group">
+                        <h4><label htmlFor="password">New Password:</label><br/></h4>
                         <input name="new_password" type="password" value={new_password} onChange={this.handleInputChange}/>
                     </div>
-                    <div>
-                        <label htmlFor="confirmpassword">Confirm New Password</label><br/>
+                    <div className="form-group">
+                        <h4><label htmlFor="confirmpassword">Confirm New Password:</label><br/></h4>
                         <input name="confirm_new_password" type="password" value={confirm_new_password} onChange={this.handleInputChange}/>
                     </div>
                     <div>
-                        <button type="submit">Reset Password</button>
-                    </div>
+                        <button type="submit" className="btn btn-outline-warning">Reset Password</button>
+                    </div><br/><br/>
                 </form>
                 <footer>
-                    <p class="copyright text-muted small">Copyright © Gela 2018.</p>
+                    <p class="copyright text-muted small footer">Copyright © Gela 2018.</p>
                 </footer>
             </div>
         );

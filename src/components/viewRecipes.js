@@ -176,29 +176,29 @@ const Recipe = props => (
   <div class="card recipe-card">
     <div class="card-header" id={props.recipe_id}>
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target={`#recipeDetails${props.recipe_id}`} aria-expanded="true" aria-controls="collapseOne">
-        <p>{props.recipe_name}</p>
+        <button className="btn btn-link brown" data-toggle="collapse" data-target={`#recipeDetails${props.recipe_id}`} aria-expanded="true" aria-controls="collapseOne">
+        {props.recipe_name}
         </button>
       </h5>
     </div>
-
     <div id={`recipeDetails${props.recipe_id}`} class="collapse show" aria-labelledby={props.recipe_id} data-parent="#accordion">
-      <div class="card-body">
-      <p>Ingredients:<br/> {props.ingredients}<br/></p>
-      <p>Directions: <br/>{props.directions}< br/></p>
-      <button type="button" className="btn my-2 my-sm-0 addbutton link btn-outline-warning" data-toggle="modal" data-target={`#editRecipe${props.recipe_id}`}>
-        <i class="far fa-edit"></i>Edit
-      </button>
-      {/* <button type="button" className="btn btn-default">
-         <Link to={`/categories/${props.category_id}/editrecipes/${props.recipe_id}`} className="link">
-         <i class="far fa-edit"></i>Edit</Link>
-      </button> */}
-      <EditRecipe recipe_id={props.recipe_id}/>
-      <button type="button" className="btn btn-default btn-outline-warning  link "
-         onClick={props.handleDeleteRecipe}>
-        <i class="fas fa-trash"></i>Delete
-      </button>  
+      <div className="card-body">
+        <p><div className="brown">Ingredients:<br/></div> {props.ingredients}<br/></p>
+        <p><div className="brown">Directions: <br/></div>{props.directions}< br/></p>
+        <button type="button" className="btn my-2 my-sm-0 btn-outline-success recipe-btn" data-toggle="modal" data-target={`#editRecipe${props.recipe_id}`}>
+          <i class="far fa-edit"></i>
+        </button>
+        <div class="divider"/>
+        <button type="button" className="btn btn-default btn-outline-danger recipe-btn"
+          onClick={props.handleDeleteRecipe}>
+          <i class="fas fa-trash"></i>
+        </button>  
       </div>
+      <EditRecipe category_id={props.category_id} 
+                  recipe_id={props.recipe_id} 
+                  recipe_name={props.recipe_name} 
+                  ingredients={props.ingredients} 
+                  directions={props.directions}/>
     </div>
   </div>
   </div>

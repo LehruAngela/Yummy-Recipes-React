@@ -30,7 +30,7 @@ class Profile extends React.Component{
         const {username} = this.state;
         return(
             <div className="purple">
-                {username}
+                <i class="fas fa-user-circle"></i>{username}
             </div>
         );
     }

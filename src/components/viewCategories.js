@@ -12,7 +12,7 @@ export class ViewCategory extends React.Component {
     categories: [],
     q: "",
     page:"",
-    per_page:6,
+    per_page:9,
     total:"",
   }
 
@@ -34,7 +34,6 @@ export class ViewCategory extends React.Component {
   componentDidMount() {
     this.handleViewCategory();
   }
-
    
   handleInputChange =(event)=>{
     const {name, value} = event.target;
@@ -80,23 +79,6 @@ export class ViewCategory extends React.Component {
               }
           });
     }
-  
-  handleEditCategory =(cat_id)=>{
-    let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
-    axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}`, {headers})
-          .then(response => {
-          notify.show('Category edited successfully', 'success', 4000);
-          this.handleViewCategory();
-          })
-          .catch(error => {
-          if (error.response){
-              alert(error.response.data.message)
-              }
-          else if(error.request){
-              alert('Request not made')
-              }
-          });
-    }
 
     handlePageChange = (event, per_page,page) => {
       event.preventDefault();
@@ -119,7 +101,8 @@ export class ViewCategory extends React.Component {
     const {categories, q, per_page, total} = this.state;
     return (
       <div>
-        < Navbar/>
+        
+        < Navbar />
         <div>
             <h2 className="heading">Categories</h2>
             <CreateCategory handleViewCategory={this.handleViewCategory} {...this.props}/>
@@ -135,36 +118,35 @@ export class ViewCategory extends React.Component {
               categories.map((category)=>(
               <Category {...category} key={category.category_id}
               handleDeleteCategory={()=>this.handleDeleteCategory(category.category_id)}
-              cat_id = {category.category_id}/>
+              cat_id = {category.category_id}
+              handleEditCategory={this.handleEditCategory}/>
+
               ))
             }
             </div>
               <Pagination per_page={per_page} total={total} handlePageChange={this.handlePageChange}/>
         </div>
-</div>
-    );
-  }
-}
-
-const Category = props => (
-  <div className="card single-card">
-    <div className="card-body">
-      <Link to={`/categories/${props.cat_id}/viewrecipes`}><h5 className="card-title">{props.category_name}</h5></Link>
-      <button type="button" qName="btn my-2 my-sm-0 addbutton link btn-outline-warning" data-toggle="modal" data-target={`#editCategory${props.category_id}`}>
-        <i class="far fa-edit"></i>
-      </button> 
-      {/* <EditCategory handleViewCategory={this.handleViewCategory} {...this.props}/> */}
-      {/* <button type="button" className="btn btn-default">
-        <Link to={`/categories/${props.cat_id}`} className="link">
-        <i class="far fa-edit"></i>Edit</Link>
-      </button>   */}
-      <button type="button" className="btn btn-default btn-outline-warning"
-        onClick={props.handleDeleteCategory}>
-        <i class="fas fa-trash"></i>
-      </button>  
     </div>
-    <EditCategory category_id={props.category_id}/>
-  </div>
+        );
+      }
+    }
+
+    const Category = props => (
+      <div className="card single-card">
+        <div className="card-body">
+          <Link to={`/categories/${props.cat_id}/viewrecipes`}><h5 className="card-title">{props.category_name}</h5></Link>
+          <button type="button" className="btn my-2 my-sm-0 btn-outline-success" data-toggle="modal" 
+            data-target={`#editCategory${props.category_id}`}>
+              <i class="far fa-edit"></i>
+          </button>
+          <div class="divider"/>
+          <button type="button" className="btn btn-default btn-outline-danger"
+            onClick={props.handleDeleteCategory}>
+            <i class="fas fa-trash"></i>
+          </button>  
+        </div>
+        <EditCategory category_name={props.category_name} category_id={props.category_id} />
+      </div>
 );
 
 export default ViewCategory;

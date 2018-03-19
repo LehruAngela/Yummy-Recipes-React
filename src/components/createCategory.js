@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
+import {BASE_URL} from '../baseUrl';
 
 export class CreateCategory extends React.Component {
     state = {
@@ -12,15 +13,17 @@ export class CreateCategory extends React.Component {
     this.setState({[name]:value})
 
     }
+    
 
     handleCreateCategory =(event)=>{
+        event.preventDefault();
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
-    event.preventDefault();
-    axios.post('http://127.0.0.1:5000/api-v1/categories/',this.state, {headers})
+    
+ 
+    axios.post(`${BASE_URL}/categories/`,this.state, {headers})
             .then(response => {
-                document.getElementById('closeCategoryModal').click();
-                notify.show('Category created successfully', 'success', 4000);
-                this.props.handleViewCategory();
+            notify.show('Category created successfully', 'success', 4000);
+               window.location.reload();
             })
     .catch(error => {
     if (error.response){

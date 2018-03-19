@@ -12,19 +12,24 @@ export class EditRecipe extends React.Component {
     handleInputChange = (event) => {
         const { name, value } = event.target;
         this.setState({ [name]: value })
+    }
 
+    componentWillMount(){
+        this.setState({recipe_name:this.props.recipe_name, 
+                       ingredients:this.props.ingredients,
+                       directions:this.props.directions               
+        })
     }
 
     handleEditRecipe = (event) => {
-        let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
-        let cat_id = this.props.match.params.category_id
-        let rec_id = this.props.match.params.recipe_id
         event.preventDefault();
-        axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/${rec_id}`, { headers })
+        let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
+        let cat_id = this.props.category_id
+        let rec_id = this.props.recipe_id
+        axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/${rec_id}`, this.state, { headers })
             .then(response => {
-                document.getElementById('closeCategoryModal').click();
                 notify.show('Recipe edited successfully', 'success', 4000);
-                this.handleViewRecipe();
+                window.location.reload();
             })
             .catch(error => {
                 if (error.response) {
