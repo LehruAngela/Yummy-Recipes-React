@@ -17,9 +17,6 @@ export const Navbar = props => {
             <li class="nav-item active">
               <a class="nav-link" href="/categories" className="btn btn-light" >Categories<span class="sr-only">(current)</span></a>
             </li>
-            {/* <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li> */}
           </ul>
           <Profile/>
           <Logout/>

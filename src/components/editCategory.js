@@ -21,7 +21,7 @@ export class EditCategory extends React.Component {
         event.preventDefault();
         let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
         let cat_id = this.props.category_id 
-        axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}`, this.state, {headers})
+        axios.put(`${BASE_URL}/api-v1/categories/${cat_id}`, this.state, {headers})
               .then(response => {
               window.location.reload();
               notify.show('Category edited successfully', 'success', 4000);

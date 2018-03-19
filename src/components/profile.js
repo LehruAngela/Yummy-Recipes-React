@@ -9,7 +9,7 @@ class Profile extends React.Component{
 
     handleProfile =()=> {
         let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
-        axios.get('http://127.0.0.1:5000/api-v1/username', {headers})
+        axios.get(`${BASE_URL}/api-v1/username`, {headers})
                 .then(response => {
                 this.setState({username:response.data.username})
                 })

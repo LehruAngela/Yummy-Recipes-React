@@ -18,7 +18,7 @@ export class ViewCategory extends React.Component {
 
   handleViewCategory =()=>{
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
-    axios.get('http://127.0.0.1:5000/api-v1/categories/', {headers})
+    axios.get(`${BASE_URL}/api-v1/categories/`, {headers})
          .then(response => {
            this.setState({categories:response.data.results, page:response.data.page, total:response.data.total})
           })
@@ -44,7 +44,7 @@ export class ViewCategory extends React.Component {
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
     event.preventDefault();
     const q = event.target.q.value
-    axios.get(`http://127.0.0.1:5000/api-v1/categories/?q=${q}`, {headers})
+    axios.get(`${BASE_URL}/api-v1/categories/?q=${q}`, {headers})
          .then(response => {
            this.setState({categories:response.data.results})
           })
@@ -60,7 +60,7 @@ export class ViewCategory extends React.Component {
 
   handleDeleteCategory =(cat_id)=>{
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
-    axios.delete(`http://127.0.0.1:5000/api-v1/categories/${cat_id}`, {headers})
+    axios.delete(`${BASE_URL}/api-v1/categories/${cat_id}`, {headers})
          .then(response => {
           notify.show('Category deleted successfully', 'success', 4000);
           if (this.state.categories.length === 1) {
@@ -83,7 +83,7 @@ export class ViewCategory extends React.Component {
     handlePageChange = (event, per_page,page) => {
       event.preventDefault();
       let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
-      axios.get(`http://127.0.0.1:5000/api-v1/categories/?page=${page}`, {headers})
+      axios.get(`${BASE_URL}/api-v1/categories/?page=${page}`, {headers})
       .then(response => {
         this.setState({categories:response.data.results})
       })

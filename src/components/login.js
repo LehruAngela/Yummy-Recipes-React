@@ -20,7 +20,7 @@ export class Login extends React.Component{
     const {email, password} = this.state
     let data = {email, password}
     event.preventDefault();
-    axios.post('http://127.0.0.1:5000/api-v1/auth/login', data)
+    axios.post(`${BASE_URL}/api-v1/auth/login`, data)
          .then(response =>{notify.show(response.data.message, 'success', 4000);
          localStorage.setItem('accessToken', response.data.access_token);
          this.props.history.push('/categories');

@@ -20,7 +20,7 @@ export class CreateCategory extends React.Component {
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
     
  
-    axios.post(`${BASE_URL}/categories/`,this.state, {headers})
+    axios.post(`${BASE_URL}/api-v1/categories/`,this.state, {headers})
             .then(response => {
             notify.show('Category created successfully', 'success', 4000);
                window.location.reload();

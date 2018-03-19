@@ -17,7 +17,7 @@ export class SendEmail extends React.Component{
     const {email} = this.state
     let data = {email}
     event.preventDefault();
-    axios.post('http://127.0.0.1:5000/api-v1/auth/send_email',data)
+    axios.post(`${BASE_URL}/api-v1/auth/send_email`, data)
             .then(response =>{
                 document.getElementById('closeModal').click();
                 notify.show(response.data.message, 'success', 4000);

@@ -26,7 +26,7 @@ export class EditRecipe extends React.Component {
         let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
         let cat_id = this.props.category_id
         let rec_id = this.props.recipe_id
-        axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/${rec_id}`, this.state, { headers })
+        axios.put(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/${rec_id}`, this.state, { headers })
             .then(response => {
                 notify.show('Recipe edited successfully', 'success', 4000);
                 window.location.reload();

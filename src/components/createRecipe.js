@@ -19,7 +19,7 @@ export class CreateRecipe extends React.Component {
         let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
         let cat_id = this.props.match.params.category_id 
         event.preventDefault();
-        axios.post(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/`, this.state, { headers })
+        axios.post(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/`, this.state, { headers })
             .then(response => {
                 document.getElementById('closeRecipeModal').click();
                 notify.show('Recipe created successfully', 'success', 4000);

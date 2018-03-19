@@ -20,7 +20,7 @@ export class ResetPassword extends React.Component{
     const {email, new_password, confirm_new_password} = this.state
     let data = {email, new_password, confirm_new_password}
     event.preventDefault();
-    axios.post('http://127.0.0.1:5000/api-v1/auth/reset_password',data, {headers} )
+    axios.post(`${BASE_URL}/api-v1/auth/reset_password`, data, {headers} )
             .then(response =>{notify.show(response.data.message, 'success', 4000);
             this.props.history.push('/login');
             })

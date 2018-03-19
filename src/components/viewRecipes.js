@@ -24,7 +24,7 @@ export class ViewRecipe extends React.Component {
   handleViewRecipe =()=>{
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
     let cat_id = this.props.match.params.category_id 
-    axios.get(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/`, {headers})
+    axios.get(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/`, {headers})
          .then(response => {
            this.setState({recipes:response.data.results, page:response.data.page, total:response.data.total})
            console.log(response.data)
@@ -38,7 +38,7 @@ export class ViewRecipe extends React.Component {
               }
           });
 
-    axios.get(`http://127.0.0.1:5000/api-v1/categories/${cat_id}`, {headers})
+    axios.get(`${BASE_URL}/api-v1/categories/${cat_id}`, {headers})
     .then(response => {
     this.setState({category_name:response.data.category_name})
     })
@@ -66,7 +66,7 @@ export class ViewRecipe extends React.Component {
     event.preventDefault();
     let cat_id = this.props.match.params.category_id 
     const q = event.target.q.value
-    axios.get(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/?q=${q}`, {headers})
+    axios.get(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/?q=${q}`, {headers})
          .then(response => {
            this.setState({recipes:response.data.results})
           })
@@ -83,7 +83,7 @@ export class ViewRecipe extends React.Component {
   handleDeleteRecipe =(rec_id)=>{
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
     let cat_id = this.props.match.params.category_id 
-    axios.delete(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/${rec_id}`, {headers})
+    axios.delete(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/${rec_id}`, {headers})
          .then(response => {
           if (this.state.recipes.length === 1) {
             this.setState({ recipes: [] });
@@ -107,7 +107,7 @@ export class ViewRecipe extends React.Component {
   handleEditRecipe =(rec_id)=>{
     let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`};
     let cat_id = this.props.match.params.category_id 
-    axios.put(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/${rec_id}`, {headers})
+    axios.put(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/${rec_id}`, {headers})
           .then(response => {
           notify.show('Recipe edited successfully', 'success', 4000);
           this.handleViewRecipe();
@@ -126,7 +126,7 @@ export class ViewRecipe extends React.Component {
       event.preventDefault();
       let headers = {Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
       let cat_id = this.props.match.params.category_id 
-      axios.get(`http://127.0.0.1:5000/api-v1/categories/${cat_id}/recipes/?page=${page}`, {headers})
+      axios.get(`${BASE_URL}/api-v1/categories/${cat_id}/recipes/?page=${page}`, {headers})
       .then(response => {
         this.setState({recipes:response.data.results})
       })
