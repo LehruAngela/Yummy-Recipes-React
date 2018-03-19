@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
+import {BASE_URL} from '../baseUrl';
 
 class Profile extends React.Component{
     state = {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import {notify} from 'react-notify-toast';
 import {SendEmail} from './sendEmail';
 import { Link } from 'react-router-dom';
+import {BASE_URL} from '../baseUrl';
 
 export class Login extends React.Component{
   state = {

@@ -6,7 +6,7 @@ import {Navbar} from './navbar';
 import {CreateRecipe} from './createRecipe';
 import Pagination from './pagination';
 import EditRecipe from './editRecipe';
-
+import {BASE_URL} from '../baseUrl';
 
 export class ViewRecipe extends React.Component {
   state = {

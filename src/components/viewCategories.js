@@ -6,6 +6,7 @@ import Pagination from './pagination';
 import {Navbar} from './navbar';
 import CreateCategory from './createCategory';
 import EditCategory from './editCategory';
+import {BASE_URL} from '../baseUrl';
 
 export class ViewCategory extends React.Component {
   state = {
