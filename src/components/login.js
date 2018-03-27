@@ -5,6 +5,10 @@ import {SendEmail} from './sendEmail';
 import { Link } from 'react-router-dom';
 import {BASE_URL} from '../baseUrl';
 
+/**
+ * Component for logging in users
+ */
+
 export class Login extends React.Component{
   state = {
     email: '',
@@ -16,7 +20,8 @@ export class Login extends React.Component{
     this.setState({[name]:value})
 
   }
-
+  
+  // Function to handle the logging in of users
   handleLogin =(event)=>{
     const {email, password} = this.state
     let data = {email, password}

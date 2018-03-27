@@ -2,8 +2,12 @@ import React from 'react';
 import {notify} from 'react-notify-toast';
 import {withRouter} from 'react-router'
 
-class Logout extends React.Component{
+/**
+ * Component for logging out users
+ */
 
+class Logout extends React.Component{
+  // Function that logs out users
   handleLogout =(event)=>{
          localStorage.clear();
          this.props.history.push('/login');

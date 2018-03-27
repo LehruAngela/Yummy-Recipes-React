@@ -4,6 +4,10 @@ import {notify} from 'react-notify-toast';
 import { Link } from 'react-router-dom';
 import {BASE_URL} from '../baseUrl';
 
+/**
+ * Component for registering the users of the application
+ */
+
 export class Register extends React.Component{
     state = {
         email: '',
