@@ -62,5 +62,5 @@ $ npm test -- -coverage or
 $yarn test --coverage -u
 ```
 
-##To test the app, follow this link:
+## To test the app, follow this link:
 https://yummy-recipes-react-v1.herokuapp.com/
