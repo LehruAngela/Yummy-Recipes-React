@@ -10,12 +10,6 @@ Yummy Reccipes(YR)  is a react-redux application whose purpose is to ease food r
 - NodeJs 
 - A package manager e.g. yarn or npm
 
-### Clone the repository
-```
-$ git clone https://github.com/EleisonC/ReactApplication.git
-$ cd into ReactApplication
-```
-
 ## Installing dependancies
 
 - If you have yarn installed
@@ -44,7 +38,7 @@ $ npm start
 
 - If you have yarn installed
 ```
-$ yarn test --coverage 
+$ yarn test
 ```
 
 - If you are using npm
