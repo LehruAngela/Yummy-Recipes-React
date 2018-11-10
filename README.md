@@ -36,11 +36,6 @@ $ npm start
 
 ## Running the tests
 
-- If you have yarn installed
-```
-$ yarn test
-```
-
 - If you are using npm
 ```
 $ npm test
