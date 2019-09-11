@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed');
+body {
+    background-image: url(../images/yummy.jpg);
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
+
+div {
+    color: #ddd5c5;
+}
+
+.heading {
+    float: left;
+}
+h5 {
+    color: brown;
+}
+.brown {
+    color: brown;
+}
+
+h1 {
+    color:#ddd5c5;
+}
+.link {
+    color:black;
+}
+
+.navbar {
+    height: 3em;
+    margin-bottom: 2.5em;
+}
+
+hr {
+    margin-left: 5em;
+    margin-right: 5em;
+    background-color: white;
+}
+.addbutton {
+    float: right;
+    margin-right: 11em;
+}
+
+.search {
+   margin-left: 4em;
+}
+
+p {
+    color:black;
+}
+
+.modal-content {
+    background-color: #b46c3fc0;
+    text-align: center;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.form-margin{
+    float: left;
+    padding: 5em 0em 9em 9em;
+    text-align: center;
+
+}
+
+.footer {
+    color: #e699a1!important;
+
+}
+
+.category-card {
+    margin-left: 12em;
+    margin-right: 12em;
+    padding: 1em 3em 0em 3em;
+    text-align:center;
+}
+
+.recipe-card {
+    margin-left: 8em;
+    margin-right: 8em;
+    background-color: rgba(255, 255, 255, 0.932) !important;
+    border-radius: 10px!important;
+}
+
+.single-card {
+    background-color: rgba(255, 255, 255, 0.918) !important;
+    padding: 1.5em 2em 1.5em 2em;
+    border-radius: 6px!important;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    width: 18rem;
+}
+.heading {
+    margin-left: 4em;
+    margin-right: 2em;
+}
+
+a {
+    color: #ddd5c5;
+}
+input {
+    width: 15em;
+    padding: 0.4em 1em;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+
+.purple {
+    color: purple;
+}
+
+.black {
+    color: black;
+}
+
+.pagination {
+    margin-left: 20%;
+    margin-top: 0.3em;
+}
+
+.pagination-title {
+    margin-top: 1.5em;
+    margin-left: 20%;
+    font-size: 120%;
+    font-weight: bold;
+    
+}
+.recipe-btn {
+    float:right;
+    margin-bottom: 1em; 
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+/* top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px */
