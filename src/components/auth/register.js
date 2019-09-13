@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { registerUser } from '../actions/authActions';
+import { registerUser } from '../../actions/authActions';
 
 class Register extends Component {
   state = {
@@ -23,6 +23,7 @@ class Register extends Component {
     // call action
     this.props.registerUser(data)
   }
+  
   render() {
     const { email, username, password, confirm_password } = this.state
     return (
