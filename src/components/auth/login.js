@@ -17,7 +17,6 @@ class Login extends React.Component {
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value })
-
   }
 
   // Function to handle the logging in of users
@@ -37,11 +36,11 @@ class Login extends React.Component {
         <h1>Login to your account</h1>< br />
         <form onSubmit={this.handleLogin}>
           <div className="form-group">
-            <h4><label for="email">Email:</label></h4>
+            <h4><label htmlFor="email">Email:</label></h4>
             <input name="email" type="email" value={email} onChange={this.handleInputChange} />
           </div><br />
           <div className="form-group">
-            <h4><label for="password">Password:</label></h4>
+            <h4><label htmlFor="password">Password:</label></h4>
             <input name="password" type="password" value={password} onChange={this.handleInputChange} />
           </div>
           <div className="form-group">
