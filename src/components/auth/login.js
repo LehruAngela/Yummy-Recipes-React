@@ -58,7 +58,7 @@ class Login extends React.Component {
           <Link to="/"><button className="btn btn-outline-warning" type="submit">Register</button></Link>
         </div><br /><br />
         <footer>
-          <p class="copyright text-muted small footer">© Gela 2019</p>
+          <p className="copyright text-muted small footer">© Gela 2019</p>
         </footer>
       </div>
     );

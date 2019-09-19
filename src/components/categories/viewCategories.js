@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import Pagination from './pagination';
-// import { Navbar } from './navbar';
+import Navbar from '../shared/navbar';
 // import CreateCategory from './createCategory';
 // import EditCategory from './editCategory';
 import { viewCategory, searchCategory, deleteCategory, pageChange } from '../../actions/categoryActions';
@@ -40,7 +40,7 @@ class ViewCategory extends Component {
     const { categories, q, per_page, total } = this.state;
     return (
       <div>
-        {/* < Navbar /> */}
+        < Navbar />
         <div>
           <h2 className="heading">Categories</h2>
           {/* <CreateCategory handleViewCategory={this.handleViewCategory} {...this.props} /> */}
