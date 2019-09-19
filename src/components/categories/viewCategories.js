@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 // import Pagination from './pagination';
 import Navbar from '../shared/navbar';
-// import CreateCategory from './createCategory';
+import CreateCategory from './createCategory';
 // import EditCategory from './editCategory';
 import { viewCategory, searchCategory, deleteCategory, pageChange } from '../../actions/categoryActions';
 
 class ViewCategory extends Component {
   state = {
-    categories: [],
     q: "",
-    page: "",
     per_page: 9,
-    total: "",
   }
 
   componentDidMount() {
     this.props.viewCategory();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newCategory) {
+      this.props.categories.unshift(nextProps.newCategory);
+    }
   }
 
   handleInputChange = (event) => {
@@ -37,18 +41,19 @@ class ViewCategory extends Component {
   }
 
   render() {
-    const { categories, q, per_page, total } = this.state;
+    const { q, per_page } = this.state;
+    const { categories, total } = this.props;
     return (
       <div>
         < Navbar />
         <div>
           <h2 className="heading">Categories</h2>
-          {/* <CreateCategory handleViewCategory={this.handleViewCategory} {...this.props} /> */}
+          <CreateCategory handleViewCategory={this.handleViewCategory} {...this.props} />
         </div>
         <div>
-          <form onSubmit={this.handleViewCategoryBySearch} class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 search" placeholder="Search" aria-label="Search" name="q" type="text" value={q} onChange={this.handleInputChange} />
-            <button type="submit" className="btn my-2 my-sm-0"><i class="fas fa-search"></i>Search</button>
+          <form onSubmit={this.handleViewCategoryBySearch} className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2 search" placeholder="Search" aria-label="Search" name="q" type="text" value={q} onChange={this.handleInputChange} />
+            <button type="submit" className="btn my-2 my-sm-0"><i className="fas fa-search"></i>Search</button>
           </form>
           <hr />
           <div className="row category-card">
@@ -75,16 +80,26 @@ const Category = props => (
       <Link to={`/categories/${props.cat_id}/viewrecipes`}><h5 className="card-title">{props.category_name}</h5></Link>
       <button type="button" className="btn my-2 my-sm-0 btn-outline-success" data-toggle="modal"
         data-target={`#editCategory${props.category_id}`}>
-        <i class="far fa-edit"></i>
+        <i className="far fa-edit"></i>
       </button>
-      <div class="divider" />
+      <div className="divider" />
       <button type="button" className="btn btn-default btn-outline-danger"
         onClick={props.handleDeleteCategory}>
-        <i class="fas fa-trash"></i>
+        <i className="fas fa-trash"></i>
       </button>
     </div>
     {/* <EditCategory category_name={props.category_name} category_id={props.category_id} /> */}
   </div>
 );
 
-export default connect(null, { viewCategory, searchCategory, deleteCategory, pageChange })(ViewCategory);
+ViewCategory.propTypes = {
+  categories: PropTypes.array.isRequired,
+  newCategory: PropTypes.object
+}
+
+const mapStateToProps = state => ({
+  categories: state.category.categories,
+  newCategory: state.category.newCategory,
+})
+
+export default connect(mapStateToProps, { viewCategory, searchCategory, deleteCategory, pageChange })(ViewCategory);
