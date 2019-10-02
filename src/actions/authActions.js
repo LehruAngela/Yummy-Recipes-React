@@ -4,7 +4,7 @@ import { BASE_URL } from '../constants/baseUrl';
 import { history } from '../helpers/history';
 import { GET_USERNAME } from './types';
 
-export const registerUser = (data) => {
+export const registerUser = (data) => dispatch => {
   axios.post(`${BASE_URL}/api-v1/auth/register`, data)
     .then(response => {
       notify.show(response.data.message, 'success', 4000);
@@ -21,7 +21,7 @@ export const registerUser = (data) => {
     })
 }
 
-export const loginUser = (data) => {
+export const loginUser = (data) => dispatch => {
   axios.post(`${BASE_URL}/api-v1/auth/login`, data)
     .then(response => {
       notify.show(response.data.message, 'success', 4000);

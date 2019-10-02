@@ -20,7 +20,7 @@ export const viewCategory = () => dispatch => {
     });
 }
 
-export const searchCategory = (q) => {
+export const searchCategory = (q) => dispatch => {
   let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` }
   axios.get(`${BASE_URL}/api-v1/categories/?q=${q}`, { headers })
     .then(response => {
