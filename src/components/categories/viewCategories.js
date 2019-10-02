@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import Pagination from './pagination';
+import Pagination from '../shared/pagination';
 import Navbar from '../shared/navbar';
 import CreateCategory from './createCategory';
-// import EditCategory from './editCategory';
+import EditCategory from './editCategory';
 import { viewCategory, searchCategory, deleteCategory, pageChange } from '../../actions/categoryActions';
 
 class ViewCategory extends Component {
@@ -19,8 +19,11 @@ class ViewCategory extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.newCategory) {
+    if (nextProps.newCategory !== undefined) {
       this.props.categories.unshift(nextProps.newCategory);
+    }
+    if (nextProps.deletedCategory !== "") {
+      window.location.reload(); //reloads page, better solution yet to be written
     }
   }
 
@@ -33,6 +36,11 @@ class ViewCategory extends Component {
     event.preventDefault();
     const q = event.target.q.value
     this.props.searchCategory(q)
+  }
+
+  handleDeleteCategory = (catId) => {
+    this.props.deleteCategory(catId);
+    this.props.viewCategory();
   }
 
   handlePageChange = (event, page) => {
@@ -48,7 +56,7 @@ class ViewCategory extends Component {
         < Navbar />
         <div>
           <h2 className="heading">Categories</h2>
-          <CreateCategory handleViewCategory={this.handleViewCategory} {...this.props} />
+          <CreateCategory />
         </div>
         <div>
           <form onSubmit={this.handleViewCategoryBySearch} className="form-inline my-2 my-lg-0">
@@ -60,14 +68,14 @@ class ViewCategory extends Component {
             {
               categories.map((category) => (
                 <Category {...category} key={category.category_id}
-                  handleDeleteCategory={() => this.props.deleteCategory(category.category_id)}
+                  handleDeleteCategory={() => this.handleDeleteCategory(category.category_id)}
                   cat_id={category.category_id}
                   handleEditCategory={this.handleEditCategory} />
 
               ))
             }
           </div>
-          {/* <Pagination per_page={per_page} total={total} handlePageChange={this.handlePageChange} /> */}
+          <Pagination per_page={per_page} total={total} handlePageChange={this.handlePageChange} />
         </div>
       </div>
     );
@@ -88,7 +96,7 @@ const Category = props => (
         <i className="fas fa-trash"></i>
       </button>
     </div>
-    {/* <EditCategory category_name={props.category_name} category_id={props.category_id} /> */}
+    <EditCategory category_name={props.category_name} category_id={props.category_id} />
   </div>
 );
 
@@ -100,6 +108,7 @@ ViewCategory.propTypes = {
 const mapStateToProps = state => ({
   categories: state.category.categories,
   newCategory: state.category.newCategory,
+  deletedCategory: state.category.deletedCategory,
 })
 
 export default connect(mapStateToProps, { viewCategory, searchCategory, deleteCategory, pageChange })(ViewCategory);

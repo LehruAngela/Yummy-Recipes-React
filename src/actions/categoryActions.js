@@ -56,6 +56,23 @@ export const createCategory = (category) => dispatch => {
     });
 }
 
+export const editCategory = (categoryId, categoryName) => dispatch => {
+  let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
+  axios.put(`${BASE_URL}/api-v1/categories/${categoryId}`, categoryName, { headers })
+    .then(response => {
+      window.location.reload(); // better solution to be found
+      notify.show('Category edited successfully', 'success', 4000);
+    })
+    .catch(error => {
+      if (error.response) {
+        alert(error.response.data.message)
+      }
+      else if (error.request) {
+        alert('Request not made')
+      }
+    });
+}
+
 export const deleteCategory = (catId) => dispatch => {
   let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
   axios.delete(`${BASE_URL}/api-v1/categories/${catId}`, { headers })
@@ -64,7 +81,7 @@ export const deleteCategory = (catId) => dispatch => {
       payload: response.data.message.split(" ")
     }))
     .then(response => {
-      notify.show('Category deleted successfully', 'success', 4000); 
+      notify.show('Category deleted successfully', 'success', 4000);
     })
     .catch(error => {
       if (error.response) {
