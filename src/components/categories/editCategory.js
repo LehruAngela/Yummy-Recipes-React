@@ -27,16 +27,16 @@ export class EditCategory extends React.Component {
     const { category_name } = this.state
     return (
       <div>
-        <div class="modal fade" id={`editCategory${this.props.category_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLongTitle">Edit Category</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeCategoryEditModal">
+        <div className="modal fade" id={`editCategory${this.props.category_id}`} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h4 className="modal-title" id="exampleModalLongTitle">Edit Category</h4>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close" id="closeCategoryEditModal">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <form onSubmit={this.handleEditCategory}>
                   <div className="form-group">
                     <h6><label>Category Name</label><br /></h6>

@@ -15,7 +15,8 @@ export class CreateCategory extends Component {
 
   handleCreateCategory = (event) => {
     event.preventDefault();
-    this.props.createCategory(this.state)
+    this.props.createCategory(this.state);
+    document.getElementById('closeCategoryModal').click();
   }
 
   render() {

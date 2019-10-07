@@ -23,9 +23,10 @@ export const viewCategory = () => dispatch => {
 export const searchCategory = (q) => dispatch => {
   let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` }
   axios.get(`${BASE_URL}/api-v1/categories/?q=${q}`, { headers })
-    .then(response => {
-      this.setState({ categories: response.data.results })
-    })
+    .then(response => dispatch({
+      type: VIEW_CATEGORIES,
+      payload: response.data
+    }))
     .catch(error => {
       if (error.response) {
         alert(error.response.data.message)

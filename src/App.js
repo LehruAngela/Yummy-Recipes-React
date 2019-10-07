@@ -9,6 +9,7 @@ import PrivateRoute from './helpers/privateRoutes';
 import Register from './components/auth/register';
 import Login from './components/auth/login';
 import ViewCategory from './components/categories/viewCategories';
+import ViewRecipe from './components/recipes/viewRecipes';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path='/' component={Register} />
           <Route exact path='/login' component={Login} />
           <PrivateRoute exact path='/categories' component={ViewCategory} />
+          <PrivateRoute exact path='/categories/:category_id/viewrecipes' component={ViewRecipe} />
         </Switch>
       </Router>
     </Provider>
