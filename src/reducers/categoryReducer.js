@@ -11,7 +11,8 @@ export default function (state = initialState, action) {
     case VIEW_CATEGORIES:
       return {
         ...state,
-        categories: action.payload.results.reverse(),
+        categories: action.payload.results, // .reverse(), removing this because a better way would have
+        // been for these categories to be sorted from the backend instead of reversing from the reducer
         total: action.payload.total,
         newCategory: action.payload.category_name
       }

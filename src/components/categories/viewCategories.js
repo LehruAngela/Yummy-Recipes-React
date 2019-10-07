@@ -20,7 +20,8 @@ class ViewCategory extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.newCategory !== undefined) {
-      this.props.categories.unshift(nextProps.newCategory);
+      window.location.reload(); // better solution to be found
+      // this.props.categories.unshift(nextProps.newCategory);
     }
     if (nextProps.deletedCategory !== "") {
       window.location.reload(); //reloads page, better solution yet to be written
@@ -107,6 +108,7 @@ ViewCategory.propTypes = {
 
 const mapStateToProps = state => ({
   categories: state.category.categories,
+  total: state.category.total,
   newCategory: state.category.newCategory,
   deletedCategory: state.category.deletedCategory,
 })

@@ -16,7 +16,7 @@ const Pagination = props => {
     pages.push(
       <li
         key={page}>
-        <button className="btn btn-outline-warning" onClick={(event) => { handlePageChange(event, per_page, page); }}> {page}</button>
+        <button className="btn btn-outline-warning" onClick={(event) => { handlePageChange(event, page); }}> {page}</button>
       </li>
     );
   }
