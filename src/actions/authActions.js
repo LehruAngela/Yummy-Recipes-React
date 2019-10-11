@@ -54,3 +54,20 @@ export const getUsername = () => dispatch => {
       }
     });
 }
+
+export const sendEmail = () => dispatch => {
+  axios.post(`${BASE_URL}/api-v1/auth/send_email`, data)
+    .then(response => {
+      document.getElementById('closeModal').click();
+      notify.show(response.data.message, 'success', 4000);
+    })
+
+    .catch(error => {
+      if (error.response) {
+        alert(error.response.data.message)
+      }
+      else if (error.request) {
+        alert('Request not made')
+      }
+    });
+}

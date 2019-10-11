@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getUsername } from '../../actions/authActions';
-// import Logout from "./logout";
+import Logout from '../auth/logout';
 
 class Navbar extends Component {
   componentDidMount() {
@@ -28,7 +28,7 @@ class Navbar extends Component {
           <div className="purple">
             <i className="fas fa-user-circle"></i>{this.props.username}
           </div>
-          {/* <Logout /> */}
+          <Logout />
         </div>
       </nav>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
-// import {SendEmail} from './sendEmail';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import SendEmail from './sendEmail';
 import { loginUser } from '../../actions/authActions';
 
 /**
@@ -47,10 +47,10 @@ class Login extends React.Component {
             <button className="btn btn-outline-warning" type="submit">Login</button>
           </div>
           <div>
-            {/* <a href="#" data-toggle="modal" data-target="#exampleModal"> */}
+            <button className="link-button" href="#" data-toggle="modal" data-target="#exampleModal">
             Forgotten Password?
-          {/* </a> */}
-            {/* <SendEmail/> */}
+          </button>
+            <SendEmail/>
           </div><br /><br />
         </form>
         <div>

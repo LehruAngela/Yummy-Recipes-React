@@ -137,6 +137,26 @@ input {
     height:auto;
     display:inline-block;
 }
+
+.pageNotFound{
+   padding: 22% 40%;
+}
+
+.link-button {
+    color: #ffaad7;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  
+.link-button:hover,
+.link-button:focus {
+text-decoration: none;
+}
 /* top padding is 25px
 right padding is 50px
 bottom padding is 75px
