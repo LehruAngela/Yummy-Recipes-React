@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Component renders without crashing 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Navbar
+    getUsername={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    username="TestUser"
+  />
+</ContextProvider>
+`;

@@ -43,7 +43,7 @@ export const getUsername = () => dispatch => {
   axios.get(`${BASE_URL}/api-v1/username`, { headers })
     .then(response => dispatch({
       type: GET_USERNAME,
-      payload: response.data.username
+      payload: response.data
     }))
     .catch(error => {
       if (error.response) {
