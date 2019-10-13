@@ -23,6 +23,6 @@ describe("Auth Actions", () => {
     const actions = store.getActions();
 
     expect(actions[0].type).toEqual('GET_USERNAME');
-    expect(actions[0].payload[0].username).toEqual('TestUser');
+    expect(actions[0].payload[0].username).toEqual('TestUser')
   });
 });
