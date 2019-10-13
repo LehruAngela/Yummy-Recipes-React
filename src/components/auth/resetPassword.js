@@ -1,7 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import { notify } from 'react-notify-toast';
-import { BASE_URL } from '../baseUrl';
+import { connect } from 'react-redux';
+import { resetPassword } from '../../actions/authActions';
 
 export class ResetPassword extends React.Component {
   state = {
@@ -17,24 +16,10 @@ export class ResetPassword extends React.Component {
   }
 
   handleResetPassword = (event) => {
-    let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
+    event.preventDefault();
     const { email, new_password, confirm_new_password } = this.state
     let data = { email, new_password, confirm_new_password }
-    event.preventDefault();
-    axios.post(`${BASE_URL}/api-v1/auth/reset_password`, data, { headers })
-      .then(response => {
-        notify.show(response.data.message, 'success', 4000);
-        this.props.history.push('/login');
-      })
-
-      .catch(error => {
-        if (error.response) {
-          alert(error.response.data.message)
-        }
-        else if (error.request) {
-          alert('Request not made')
-        }
-      });
+    this.props.resetPassword(data);
   }
 
   render() {
@@ -67,4 +52,4 @@ export class ResetPassword extends React.Component {
   }
 }
 
-export default ResetPassword;
+export default connect(null, { resetPassword })(ResetPassword);

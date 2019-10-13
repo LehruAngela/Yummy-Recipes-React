@@ -47,7 +47,7 @@ class Login extends React.Component {
             <button className="btn btn-outline-warning" type="submit">Login</button>
           </div>
           <div>
-            <button className="link-button" href="#" data-toggle="modal" data-target="#exampleModal">
+            <button className="link-button" data-toggle="modal" data-target="#exampleModal">
             Forgotten Password?
           </button>
             <SendEmail/>

@@ -1,8 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import { notify } from 'react-notify-toast';
+import { connect } from 'react-redux';
 import { sendEmail } from '../../actions/authActions';
-// import { BASE_URL } from '../baseUrl';
 
 export class SendEmail extends React.Component {
   state = {
@@ -16,10 +14,11 @@ export class SendEmail extends React.Component {
   }
 
   handleSendEmail = (event) => {
+    event.preventDefault();
     const { email } = this.state
     let data = { email }
-    event.preventDefault();
-    this.props.sendEmail();
+    this.props.sendEmail(data);
+    document.getElementById('closeModal').click();
   }
 
   render() {
@@ -54,4 +53,4 @@ export class SendEmail extends React.Component {
   }
 }
 
-export default SendEmail;
+export default connect(null, { sendEmail })(SendEmail);

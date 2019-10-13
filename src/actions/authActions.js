@@ -55,16 +55,33 @@ export const getUsername = () => dispatch => {
     });
 }
 
-export const sendEmail = () => dispatch => {
+export const sendEmail = (data) => dispatch => {
   axios.post(`${BASE_URL}/api-v1/auth/send_email`, data)
     .then(response => {
-      document.getElementById('closeModal').click();
       notify.show(response.data.message, 'success', 4000);
     })
 
     .catch(error => {
       if (error.response) {
-        alert(error.response.data.message)
+        notify.show(error.response.data.message, 'warning', 4000);
+      }
+      else if (error.request) {
+        alert('Request not made')
+      }
+    });
+}
+
+export const resetPassword = (data) => dispatch => {
+  let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
+  axios.post(`${BASE_URL}/api-v1/auth/reset_password`, data, { headers })
+    .then(response => {
+      notify.show(response.data.message, 'success', 4000);
+      history.push('/login');
+    })
+
+    .catch(error => {
+      if (error.response) {
+        notify.show(error.response.data.message, 'warning', 4000);
       }
       else if (error.request) {
         alert('Request not made')

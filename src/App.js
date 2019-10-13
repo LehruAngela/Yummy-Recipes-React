@@ -10,6 +10,7 @@ import Register from './components/auth/register';
 import Login from './components/auth/login';
 import ViewCategory from './components/categories/viewCategories';
 import ViewRecipe from './components/recipes/viewRecipes';
+import ResetPassword from './components/auth/resetPassword';
 import PageNotFound from './components/shared/pageNotFound';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path='/login' component={Login}/>
           <PrivateRoute exact path='/categories' component={ViewCategory}/>
           <PrivateRoute exact path='/categories/:category_id/viewrecipes' component={ViewRecipe}/>
+          <Route exact path='/resetpassword' component={ResetPassword} />
           <Route component={PageNotFound}/>
         </Switch>
       </Router>
