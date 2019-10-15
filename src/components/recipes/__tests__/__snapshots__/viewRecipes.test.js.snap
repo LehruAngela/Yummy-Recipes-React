@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Component renders without crashing 1`] = `
+<ContextProvider
+  value={null}
+>
+  <ViewRecipe
+    deleteRecipe={[Function]}
+    editRecipe={[Function]}
+    pageChange={[Function]}
+    recipes={Array []}
+    searchRecipe={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    total={0}
+    viewRecipe={[Function]}
+  />
+</ContextProvider>
+`;
