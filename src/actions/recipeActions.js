@@ -54,7 +54,6 @@ export const editRecipe = (catId, recId, recipeData) => dispatch => {
   let headers = { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
   axios.put(`${BASE_URL}/api-v1/categories/${catId}/recipes/${recId}`, recipeData, { headers })
     .then(response => {
-      console.log('resp', response)
       notify.show('Recipe edited successfully', 'success', 4000);
       window.location.reload();
     })
